@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Cheese Roll Naody | Menu Elegan</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #f9f6f0 0%, #f0ebe2 100%);
+            font-family: 'Inter', sans-serif;
+            color: #2c2418;
+            line-height: 1.4;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+        }
+
+        /* container utama */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* header & brand */
+        .brand {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .brand h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #3e2a21, #8b5a2b);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+        .brand-sub {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #b47c48;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+        .divider {
+            width: 70px;
+            height: 2px;
+            background: #e2cfb3;
+            margin: 1rem auto 0;
+            border-radius: 4px;
+        }
+
+        /* kartu info utama */
+        .info-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            border-radius: 48px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2.8rem;
+            box-shadow: 0 15px 35px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255,255,240,0.6);
+            text-align: center;
+            border: 1px solid rgba(255,245,225,0.9);
+        }
+        .price-tag {
+            font-size: 2.7rem;
+            font-weight: 700;
+            color: #c27e3a;
+            display: inline-flex;
+            align-items: baseline;
+            gap: 5px;
+            background: #fff8ef;
+            padding: 0.3rem 1.4rem;
+            border-radius: 100px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+        .price-tag span {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #8b6b44;
+        }
+        .mix-info {
+            margin-top: 1rem;
+            font-size: 1rem;
+            font-weight: 500;
+            background: #f5ede2;
+            display: inline-block;
+            padding: 0.5rem 1.6rem;
+            border-radius: 40px;
+            color: #6b4c2c;
+        }
+        .mix-info i {
+            margin-right: 8px;
+            color: #c27e3a;
+        }
+
+        /* grid varian */
+        .varian-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2.5rem 0 3rem;
+        }
+        .card {
+            background: #ffffffdd;
+            backdrop-filter: blur(4px);
+            border-radius: 40px;
+            width: 280px;
+            padding: 1.8rem 1.5rem 2rem;
+            transition: all 0.25s ease;
+            box-shadow: 0 20px 35px -15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255,255,245,0.9);
+            text-align: center;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            background: white;
+            box-shadow: 0 30px 45px -18px rgba(0, 0, 0, 0.15);
+            border-color: #f7e5d3;
+        }
+        .card-icon {
+            font-size: 3.4rem;
+            margin-bottom: 1rem;
+        }
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #3b2a1f;
+        }
+        .topping-badge {
+            background: #fce9d8;
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border-radius: 60px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45f2b;
+            margin: 0.8rem 0 0.6rem;
+            letter-spacing: 0.3px;
+        }
+        .topping-badge i {
+            font-size: 0.7rem;
+            margin-right: 5px;
+        }
+        .desc {
+            font-size: 0.9rem;
+            color: #7f694e;
+            margin-top: 0.5rem;
+            font-weight: 400;
+        }
+
+        /* bagian mix varian spesial */
+        .mix-section {
+            background: linear-gradient(115deg, #fffaf3 0%, #fff5e9 100%);
+            border-radius: 48px;
+            padding: 2rem 1.8rem;
+            margin: 2rem 0 2rem;
+            border: 1px solid #f3e5d5;
+            box-shadow: 0 12px 24px -16px rgba(0,0,0,0.05);
+        }
+        .mix-title {
+            font-weight: 700;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #4a3522;
+            margin-bottom: 1rem;
+        }
+        .mix-title i {
+            font-size: 1.6rem;
+            color: #d4945a;
+        }
+        .mix-example {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .chip {
+            background: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 60px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #5f452e;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            border: 1px solid #ffe2c4;
+        }
+        .chip i {
+            margin-right: 8px;
+            color: #c6894b;
+        }
+        .hr-light {
+            margin: 1.2rem 0;
+            height: 1px;
+            background: #eedfcb;
+            border: none;
+        }
+
+        /* footer / catatan */
+        .footer-note {
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: #a78764;
+            border-top: 1px solid #e9dbc9;
+            padding-top: 2rem;
+        }
+
+        /* responsif */
+        @media (max-width: 700px) {
+            body {
+                padding: 1.2rem;
+            }
+            .brand h1 {
+                font-size: 2.3rem;
+            }
+            .price-tag {
+                font-size: 2rem;
+            }
+            .card {
+                width: 100%;
+                max-width: 320px;
+            }
+            .info-card {
+                padding: 1.2rem;
+            }
+        }
+        /* sentuhan elegan */
+        .sprinkle-icon {
+            display: inline-flex;
+            gap: 3px;
+            vertical-align: middle;
+        }
+        .bg-decor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        .bg-decor::before {
+            content: "✦";
+            font-size: 240px;
+            position: absolute;
+            bottom: -50px;
+            right: -70px;
+            color: #f3dfc9;
+            font-family: serif;
+            transform: rotate(8deg);
+        }
+        .bg-decor::after {
+            content: "❀";
+            font-size: 180px;
+            position: absolute;
+            top: 10%;
+            left: -60px;
+            color: #eedfcb;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+<div class="bg-decor"></div>
+<div class="container">
+    <!-- header elegan -->
+    <div class="brand">
+        <h1>Cheese Roll Naody</h1>
+        <div class="brand-sub">artisanal cheese rolls</div>
+        <div class="divider"></div>
+    </div>
+
+    <!-- informasi harga & mix -->
+    <div class="info-card">
+        <div class="price-tag">
+            Rp 5.000 <span>/ porsi</span>
+        </div>
+        <div class="mix-info">
+            <i class="fas fa-blender"></i> Boleh mix varian dalam 1 porsi &nbsp;|&nbsp; <i class="fas fa-candy-cane"></i> Semua + Springkel warna-warni
+        </div>
+    </div>
+
+    <!-- 3 varian utama -->
+    <div class="varian-grid">
+        <!-- Coklat -->
+        <div class="card">
+            <div class="card-icon">🍫</div>
+            <h3>Coklat</h3>
+            <div class="topping-badge"><i class="fas fa-star-of-life"></i> + Springkel warna-warni</div>
+            <div class="desc">Creamy cheese roll dengan paduan coklat lembut, taburan springkel ceria di atasnya.</div>
+        </div>
+        <!-- Matcha -->
+        <div class="card">
+            <div class="card-icon">🍵</div>
+            <h3>Matcha</h3>
+            <div class="topping-badge"><i class="fas fa-star-of-life"></i> + Springkel warna-warni</div>
+            <div class="desc">Aroma matcha autentik berpadu cheese filling, diberi sentuhan springkel manis.</div>
+        </div>
+        <!-- Tiramisu -->
+        <div class="card">
+            <div class="card-icon">☕</div>
+            <h3>Tiramisu</h3>
+            <div class="topping-badge"><i class="fas fa-star-of-life"></i> + Springkel warna-warni</div>
+            <div class="desc">Klasik tiramisu dengan sentuhan kopi & keju, diakhiri springkel menggoda.</div>
+        </div>
+    </div>
+
+    <!-- bagian mix varian (boleh campur) -->
+    <div class="mix-section">
+        <div class="mix-title">
+            <i class="fas fa-magic"></i>
+            <span>Mix varian? Bebas kreasi!</span>
+        </div>
+        <p style="color: #5e4530; margin-bottom: 0.75rem; font-weight: 500;">✨ Satu porsi harga tetap Rp5.000, boleh pilih satu rasa atau gabung beberapa rasa ✨</p>
+        <div class="mix-example">
+            <div class="chip"><i class="fas fa-chocolate-bar"></i> Coklat + Matcha</div>
+            <div class="chip"><i class="fas fa-mug-hot"></i> Tiramisu + Coklat</div>
+            <div class="chip"><i class="fas fa-leaf"></i> Matcha + Tiramisu</div>
+            <div class="chip"><i class="fas fa-rainbow"></i> Combo 3 rasa (Coklat, Matcha, Tiramisu)</div>
+        </div>
+        <hr class="hr-light">
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 0.9rem; color: #846f53;">
+            <i class="fas fa-certificate"></i> <span>Setiap varian sudah termasuk topping springkel warna-warni — cantik dan meriah!</span>
+        </div>
+    </div>
+
+    <!-- tambahan elegansi: keterangan ringkas -->
+    <div class="footer-note">
+        <i class="fas fa-heart" style="color: #e7b183; margin-right: 5px;"></i> Cheese Roll Naody • setiap gigitan penuh kelembutan <i class="fas fa-smile-wink"></i><br>
+        <span style="font-size: 0.7rem; letter-spacing: 1px;">tersedia mix varian • harga ramah • kualitas premium</span>
+    </div>
+</div>
+</body>
+</html>
