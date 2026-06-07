@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Cheese Roll Naody | Menu Elegan</title>
-    <!-- Google Fonts & Font Awesome -->
+    <title>Cheese Roll Naody · Menu & Kontak</title>
+    <!-- Google Fonts & Font Awesome 6 -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -15,338 +15,478 @@
         }
 
         body {
-            background: linear-gradient(145deg, #f9f6f0 0%, #f0ebe2 100%);
+            background: linear-gradient(135deg, #faf7f2 0%, #f2ece2 100%);
             font-family: 'Inter', sans-serif;
             color: #2c2418;
             line-height: 1.4;
             padding: 2rem 1.5rem;
             min-height: 100vh;
+            position: relative;
         }
 
-        /* container utama */
+        /* decorative soft grain */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(#e7d9ca 0.8px, transparent 0.8px);
+            background-size: 24px 24px;
+            opacity: 0.25;
+            pointer-events: none;
+            z-index: 0;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
-        /* header & brand */
+        /* header */
         .brand {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             position: relative;
         }
         .brand h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 500;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #3e2a21, #8b5a2b);
+            letter-spacing: -0.3px;
+            background: linear-gradient(135deg, #3e2a1b, #b27a40);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
             text-shadow: 0 2px 5px rgba(0,0,0,0.02);
         }
         .brand-sub {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #b47c48;
-            margin-top: 0.5rem;
+            letter-spacing: 4px;
+            color: #bb874b;
             font-weight: 500;
+            margin-top: 0.25rem;
         }
         .divider {
             width: 70px;
             height: 2px;
-            background: #e2cfb3;
-            margin: 1rem auto 0;
+            background: #e0cfb8;
+            margin: 0.8rem auto 0;
             border-radius: 4px;
         }
 
-        /* kartu info utama */
+        /* info utama harga & mix */
         .info-card {
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(12px);
+            background: rgba(255, 252, 245, 0.85);
+            backdrop-filter: blur(10px);
             border-radius: 48px;
-            padding: 1.8rem 2rem;
-            margin-bottom: 2.8rem;
-            box-shadow: 0 15px 35px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255,255,240,0.6);
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
             text-align: center;
-            border: 1px solid rgba(255,245,225,0.9);
+            box-shadow: 0 12px 28px -12px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 250, 235, 0.9);
         }
         .price-tag {
-            font-size: 2.7rem;
-            font-weight: 700;
-            color: #c27e3a;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #c47a3a;
             display: inline-flex;
             align-items: baseline;
-            gap: 5px;
-            background: #fff8ef;
-            padding: 0.3rem 1.4rem;
+            gap: 6px;
+            background: #fff6ea;
+            padding: 0.2rem 1.4rem;
             border-radius: 100px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
         }
         .price-tag span {
-            font-size: 1.2rem;
-            font-weight: 500;
-            color: #8b6b44;
-        }
-        .mix-info {
-            margin-top: 1rem;
             font-size: 1rem;
             font-weight: 500;
-            background: #f5ede2;
+            color: #8b6946;
+        }
+        .mix-info {
+            margin-top: 0.8rem;
+            font-weight: 500;
+            background: #f4e9dd;
             display: inline-block;
-            padding: 0.5rem 1.6rem;
-            border-radius: 40px;
-            color: #6b4c2c;
+            padding: 0.4rem 1.6rem;
+            border-radius: 60px;
+            color: #684f32;
+            font-size: 0.9rem;
         }
         .mix-info i {
-            margin-right: 8px;
+            margin-right: 6px;
             color: #c27e3a;
         }
 
-        /* grid varian */
+        /* 3 varian grid */
         .varian-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 2rem;
-            margin: 2.5rem 0 3rem;
+            margin: 2rem 0 2rem;
         }
         .card {
-            background: #ffffffdd;
-            backdrop-filter: blur(4px);
+            background: #ffffffea;
+            backdrop-filter: blur(2px);
             border-radius: 40px;
             width: 280px;
-            padding: 1.8rem 1.5rem 2rem;
+            padding: 1.8rem 1.2rem 1.8rem;
             transition: all 0.25s ease;
-            box-shadow: 0 20px 35px -15px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(255,255,245,0.9);
+            box-shadow: 0 18px 30px -12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #fff7ed;
             text-align: center;
         }
         .card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-7px);
             background: white;
-            box-shadow: 0 30px 45px -18px rgba(0, 0, 0, 0.15);
-            border-color: #f7e5d3;
+            box-shadow: 0 32px 42px -18px rgba(0, 0, 0, 0.12);
+            border-color: #f3e2d0;
         }
         .card-icon {
-            font-size: 3.4rem;
-            margin-bottom: 1rem;
+            font-size: 3.2rem;
+            margin-bottom: 0.8rem;
         }
         .card h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             font-weight: 500;
-            margin-bottom: 0.5rem;
-            color: #3b2a1f;
+            color: #3e2b1c;
         }
         .topping-badge {
-            background: #fce9d8;
+            background: #fbefdf;
             display: inline-block;
             padding: 0.2rem 1rem;
-            border-radius: 60px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #b45f2b;
-            margin: 0.8rem 0 0.6rem;
-            letter-spacing: 0.3px;
-        }
-        .topping-badge i {
+            border-radius: 50px;
             font-size: 0.7rem;
-            margin-right: 5px;
+            font-weight: 700;
+            color: #b25f29;
+            margin: 0.6rem 0;
+            letter-spacing: 0.4px;
         }
         .desc {
-            font-size: 0.9rem;
-            color: #7f694e;
-            margin-top: 0.5rem;
-            font-weight: 400;
+            font-size: 0.85rem;
+            color: #7b6146;
+            margin-top: 0.3rem;
         }
 
-        /* bagian mix varian spesial */
+        /* bagian mix + promo menarik */
         .mix-section {
-            background: linear-gradient(115deg, #fffaf3 0%, #fff5e9 100%);
-            border-radius: 48px;
-            padding: 2rem 1.8rem;
-            margin: 2rem 0 2rem;
-            border: 1px solid #f3e5d5;
-            box-shadow: 0 12px 24px -16px rgba(0,0,0,0.05);
+            background: #fffaf2;
+            border-radius: 40px;
+            padding: 1.7rem 1.8rem;
+            margin: 1.2rem 0 1.8rem;
+            border: 1px solid #f3e3d1;
+            box-shadow: 0 8px 20px -10px rgba(0,0,0,0.04);
         }
         .mix-title {
             font-weight: 700;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             display: flex;
             align-items: center;
-            gap: 12px;
-            color: #4a3522;
-            margin-bottom: 1rem;
+            gap: 10px;
+            color: #4c3621;
+            margin-bottom: 0.9rem;
         }
-        .mix-title i {
-            font-size: 1.6rem;
-            color: #d4945a;
-        }
-        .mix-example {
+        .chip-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1rem;
+            gap: 0.8rem;
+            margin-top: 0.6rem;
         }
         .chip {
             background: white;
-            padding: 0.5rem 1.2rem;
-            border-radius: 60px;
-            font-size: 0.9rem;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
             font-weight: 500;
-            color: #5f452e;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-            border: 1px solid #ffe2c4;
-        }
-        .chip i {
-            margin-right: 8px;
-            color: #c6894b;
-        }
-        .hr-light {
-            margin: 1.2rem 0;
-            height: 1px;
-            background: #eedfcb;
-            border: none;
+            font-size: 0.85rem;
+            color: #5e432b;
+            border: 1px solid #f2dfcd;
         }
 
-        /* footer / catatan */
+        /* ========== KONTAK & ALAMAT & KATA MENARIK ========== */
+        .contact-promo {
+            background: linear-gradient(125deg, #ffffff 0%, #fef7ef 100%);
+            border-radius: 48px;
+            padding: 1.8rem 2rem;
+            margin: 2rem 0 1.5rem;
+            box-shadow: 0 15px 30px -12px rgba(61, 41, 19, 0.08);
+            border: 1px solid #ffe9d6;
+        }
+        .tagline-besar {
+            text-align: center;
+            font-size: 1.35rem;
+            font-weight: 600;
+            background: #faeedf;
+            display: inline-block;
+            width: 100%;
+            padding: 0.9rem;
+            border-radius: 80px;
+            color: #7b4a24;
+            margin-bottom: 1.8rem;
+            letter-spacing: -0.2px;
+        }
+        .tagline-besar i {
+            margin: 0 6px;
+            color: #e09d5e;
+        }
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1.2rem;
+        }
+        .contact-item {
+            flex: 1;
+            min-width: 180px;
+            background: #fcf7f0;
+            padding: 1rem 1rem;
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: all 0.2s;
+            border: 1px solid #f9e9db;
+        }
+        .contact-item i {
+            font-size: 2rem;
+            color: #c48448;
+            width: 44px;
+            text-align: center;
+        }
+        .contact-info {
+            font-weight: 500;
+        }
+        .contact-info .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #aa835c;
+        }
+        .contact-info .value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #3e2a1c;
+            word-break: break-word;
+        }
+        .btn-order {
+            background: #d4975a;
+            border: none;
+            color: white;
+            padding: 0.8rem 1.6rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: 0.2s;
+            width: 100%;
+            text-align: center;
+            margin-top: 1rem;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .btn-order:hover {
+            background: #bc7a3f;
+            transform: scale(0.98);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+        }
+        .alamat-box {
+            margin-top: 1.2rem;
+            background: #fef5ea;
+            border-radius: 32px;
+            padding: 1rem 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .alamat-text {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            color: #5f432c;
+        }
+        .copy-note {
+            font-size: 0.7rem;
+            color: #b6844a;
+        }
+
         .footer-note {
             text-align: center;
-            margin-top: 3rem;
-            font-size: 0.8rem;
-            color: #a78764;
-            border-top: 1px solid #e9dbc9;
-            padding-top: 2rem;
+            margin-top: 2rem;
+            font-size: 0.75rem;
+            color: #b69672;
+            border-top: 1px solid #e5d4c0;
+            padding-top: 1.8rem;
         }
-
-        /* responsif */
-        @media (max-width: 700px) {
+        @media (max-width: 720px) {
             body {
-                padding: 1.2rem;
+                padding: 1rem;
             }
             .brand h1 {
-                font-size: 2.3rem;
+                font-size: 2.2rem;
             }
-            .price-tag {
-                font-size: 2rem;
+            .contact-item {
+                flex: 1 1 100%;
             }
-            .card {
-                width: 100%;
-                max-width: 320px;
-            }
-            .info-card {
-                padding: 1.2rem;
+            .tagline-besar {
+                font-size: 1rem;
             }
         }
-        /* sentuhan elegan */
-        .sprinkle-icon {
-            display: inline-flex;
-            gap: 3px;
-            vertical-align: middle;
-        }
-        .bg-decor {
-            position: fixed;
-            top: 0;
-            left: 0;
+        .wa-link, .ig-link {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 10px;
             width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0.3;
-        }
-        .bg-decor::before {
-            content: "✦";
-            font-size: 240px;
-            position: absolute;
-            bottom: -50px;
-            right: -70px;
-            color: #f3dfc9;
-            font-family: serif;
-            transform: rotate(8deg);
-        }
-        .bg-decor::after {
-            content: "❀";
-            font-size: 180px;
-            position: absolute;
-            top: 10%;
-            left: -60px;
-            color: #eedfcb;
-            opacity: 0.5;
         }
     </style>
 </head>
 <body>
-<div class="bg-decor"></div>
 <div class="container">
     <!-- header elegan -->
     <div class="brand">
         <h1>Cheese Roll Naody</h1>
-        <div class="brand-sub">artisanal cheese rolls</div>
+        <div class="brand-sub">artisan roll • creamy cheese delight</div>
         <div class="divider"></div>
     </div>
 
-    <!-- informasi harga & mix -->
+    <!-- harga & mix -->
     <div class="info-card">
         <div class="price-tag">
             Rp 5.000 <span>/ porsi</span>
         </div>
         <div class="mix-info">
-            <i class="fas fa-blender"></i> Boleh mix varian dalam 1 porsi &nbsp;|&nbsp; <i class="fas fa-candy-cane"></i> Semua + Springkel warna-warni
+            <i class="fas fa-code-branch"></i> Boleh mix varian (1 porsi = 5k) &nbsp;|&nbsp; <i class="fas fa-candy-cane"></i> Semua + Springkel warna-warni
         </div>
     </div>
 
-    <!-- 3 varian utama -->
+    <!-- 3 varian -->
     <div class="varian-grid">
-        <!-- Coklat -->
         <div class="card">
             <div class="card-icon">🍫</div>
             <h3>Coklat</h3>
-            <div class="topping-badge"><i class="fas fa-star-of-life"></i> + Springkel warna-warni</div>
-            <div class="desc">Creamy cheese roll dengan paduan coklat lembut, taburan springkel ceria di atasnya.</div>
+            <div class="topping-badge"><i class="fas fa-sparkle"></i> + Springkel warna-warni</div>
+            <div class="desc">Paduan coklat legit & cream cheese, taburan springkel ceria</div>
         </div>
-        <!-- Matcha -->
         <div class="card">
             <div class="card-icon">🍵</div>
             <h3>Matcha</h3>
-            <div class="topping-badge"><i class="fas fa-star-of-life"></i> + Springkel warna-warni</div>
-            <div class="desc">Aroma matcha autentik berpadu cheese filling, diberi sentuhan springkel manis.</div>
+            <div class="topping-badge"><i class="fas fa-sparkle"></i> + Springkel warna-warni</div>
+            <div class="desc">Matcha autentik, creamy cheese, sentuhan warna-warni</div>
         </div>
-        <!-- Tiramisu -->
         <div class="card">
             <div class="card-icon">☕</div>
             <h3>Tiramisu</h3>
-            <div class="topping-badge"><i class="fas fa-star-of-life"></i> + Springkel warna-warni</div>
-            <div class="desc">Klasik tiramisu dengan sentuhan kopi & keju, diakhiri springkel menggoda.</div>
+            <div class="topping-badge"><i class="fas fa-sparkle"></i> + Springkel warna-warni</div>
+            <div class="desc">Kopi & keju klasik, diakhiri springkel manis</div>
         </div>
     </div>
 
-    <!-- bagian mix varian (boleh campur) -->
+    <!-- Mix section -->
     <div class="mix-section">
         <div class="mix-title">
-            <i class="fas fa-magic"></i>
-            <span>Mix varian? Bebas kreasi!</span>
+            <i class="fas fa-blender" style="color:#c08248"></i>
+            <span>✨ Mix & Match sesuka hati ✨</span>
         </div>
-        <p style="color: #5e4530; margin-bottom: 0.75rem; font-weight: 500;">✨ Satu porsi harga tetap Rp5.000, boleh pilih satu rasa atau gabung beberapa rasa ✨</p>
-        <div class="mix-example">
-            <div class="chip"><i class="fas fa-chocolate-bar"></i> Coklat + Matcha</div>
-            <div class="chip"><i class="fas fa-mug-hot"></i> Tiramisu + Coklat</div>
-            <div class="chip"><i class="fas fa-leaf"></i> Matcha + Tiramisu</div>
-            <div class="chip"><i class="fas fa-rainbow"></i> Combo 3 rasa (Coklat, Matcha, Tiramisu)</div>
-        </div>
-        <hr class="hr-light">
-        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 0.9rem; color: #846f53;">
-            <i class="fas fa-certificate"></i> <span>Setiap varian sudah termasuk topping springkel warna-warni — cantik dan meriah!</span>
+        <p style="margin-bottom: 6px; color:#624b32;">Satu porsi boleh 1 rasa, boleh gabung 2 atau 3 rasa sekaligus! Harga tetap Rp5.000,-</p>
+        <div class="chip-list">
+            <div class="chip">🍫 Coklat + Matcha</div>
+            <div class="chip">☕ Tiramisu + Coklat</div>
+            <div class="chip">🍵 Matcha + Tiramisu</div>
+            <div class="chip">🌈 Trio Combo (3 rasa)</div>
         </div>
     </div>
 
-    <!-- tambahan elegansi: keterangan ringkas -->
+    <!-- ========= KATA-KATA MENARIK + KONTAK & ALAMAT ========= -->
+    <div class="contact-promo">
+        <!-- slogan sweet & menarik -->
+        <div class="tagline-besar">
+            <i class="fas fa-heart"></i> Cheese Roll Naody <i class="fas fa-heart"></i><br>
+            “Lelehan cheese, taburan springkel, bahagia cuma 5 ribu!”
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; margin-bottom: 1.5rem;">
+            <span style="background:#f8e5d4; border-radius: 60px; padding: 0.3rem 1.2rem; font-size:0.8rem;"><i class="fas fa-check-circle"></i> Varian premium rasa</span>
+            <span style="background:#f8e5d4; border-radius: 60px; padding: 0.3rem 1.2rem; font-size:0.8rem;"><i class="fas fa-gem"></i> Topping springkel eksklusif</span>
+            <span style="background:#f8e5d4; border-radius: 60px; padding: 0.3rem 1.2rem; font-size:0.8rem;"><i class="fas fa-magic"></i> Mix varian bebas</span>
+        </div>
+
+        <!-- kontak telepon & ig -->
+        <div class="contact-grid">
+            <!-- WhatsApp / Telepon -->
+            <div class="contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <div class="contact-info">
+                    <div class="label">WHATSAPP / TELP</div>
+                    <div class="value">0882-8965-9613</div>
+                    <a href="https://wa.me/6288289659613?text=Halo%20Cheese%20Roll%20Naody%2C%20saya%20mau%20order%20cheese%20roll%20mix%20varian%20%3A)" target="_blank" style="font-size:0.7rem; color:#b97f48; text-decoration:none;">Klik chat →</a>
+                </div>
+            </div>
+            <!-- Instagram -->
+            <div class="contact-item">
+                <i class="fab fa-instagram"></i>
+                <div class="contact-info">
+                    <div class="label">INSTAGRAM</div>
+                    <div class="value">@N3ss4b1ll4</div>
+                    <a href="https://instagram.com/N3ss4b1ll4" target="_blank" style="font-size:0.7rem; color:#b97f48; text-decoration:none;">Follow & DM →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- alamat dengan ikon menarik -->
+        <div class="alamat-box">
+            <div class="alamat-text">
+                <i class="fas fa-map-pin" style="font-size: 1.5rem; color:#c37b3a;"></i>
+                <span><strong>📍 Alamat rumah produksi:</strong> Central Ikan Hias Slipi, Jakarta Barat (depan toko ikan hias, gang Flamboyan)</span>
+            </div>
+            <div class="copy-note">
+                <i class="far fa-clock"></i> Bisa ambil sendiri / pesan antar
+            </div>
+        </div>
+
+        <!-- tombol pesan singkat biar makin menarik -->
+        <a href="https://wa.me/6288289659613?text=Halo%20Naody!%20Saya%20mau%20pesan%20cheese%20roll%205k%20mix%20rasa%20coklat%2Cmatcha%2Ctiramisu%20%F0%9F%8D%AB" target="_blank" class="btn-order">
+            <i class="fab fa-whatsapp"></i> Pesan Sekarang – Mix Varian Bebas!
+        </a>
+        <p style="text-align: center; margin-top: 12px; font-size: 0.7rem; color: #b48b60;">
+            <i class="fas fa-store"></i> Datang langsung ke Central Ikan Hias Slipi (tanya Cheese Roll Naody) atau DM instagram
+        </p>
+    </div>
+
+    <!-- tambahan kata penutup memikat -->
+    <div style="background: #fff4e8; border-radius: 32px; padding: 1rem 1.5rem; text-align: center; margin: 1rem 0;">
+        <p style="font-weight: 500; color:#5a3e25;"><i class="fas fa-quote-left" style="margin-right: 8px; color:#cc8c50;"></i> Nikmati cheese roll homemade creamy, topping springkel warna-warni menggoda. 3 varian favorit, harga bersahabat. Bisa mix rasa dalam 1 porsi! <i class="fas fa-quote-right" style="margin-left: 8px; color:#cc8c50;"></i></p>
+        <p style="font-size:0.8rem; margin-top: 6px;">✨ Cocok buat camilan santai, teman ngopi, atau oleh-oleh kecil ✨</p>
+    </div>
+
     <div class="footer-note">
-        <i class="fas fa-heart" style="color: #e7b183; margin-right: 5px;"></i> Cheese Roll Naody • setiap gigitan penuh kelembutan <i class="fas fa-smile-wink"></i><br>
-        <span style="font-size: 0.7rem; letter-spacing: 1px;">tersedia mix varian • harga ramah • kualitas premium</span>
+        <i class="fas fa-crown" style="color: #e2b17b;"></i> Cheese Roll Naody – setiap roll adalah kelembutan & kejutan manis<br>
+        <span>📞 0882-8965-9613 | 📍 Central Ikan Hias Slipi | IG: @N3ss4b1ll4</span>
     </div>
 </div>
+
+<!-- optional: sedikit interaksi copy nomor -->
+<script>
+    // membuat elemen nomor telepon bisa diklik copy (fitur kecil)
+    const waElement = document.querySelector('.contact-item .value');
+    // tidak terlalu penting, hanya user friendly
+    document.querySelectorAll('.contact-item .value').forEach(el => {
+        if(el.innerText.includes('0882') || el.innerText.includes('N3ss4b1ll4')) {
+            el.style.cursor = 'pointer';
+            el.addEventListener('click', () => {
+                let textToCopy = el.innerText;
+                if(textToCopy.startsWith('@')) textToCopy = textToCopy.substring(1);
+                navigator.clipboard.writeText(textToCopy);
+                alert("✓ Tersalin: " + textToCopy);
+            });
+        }
+    });
+</script>
 </body>
 </html>
